@@ -1,18 +1,44 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <Nav :menuProp="isMenuActive" @onNavMenuActive="onNavMenuActive"></Nav>
+    <NavMenu
+      :menuProp="isMenuActive"
+      @onNavMenuActive="onNavMenuActive"
+    ></NavMenu>
+    <Main></Main>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Nav from '@/components/core/Nav.vue';
+import NavMenu from '@/components/core/NavMenu.vue';
+import Main from '@/components/Main.vue';
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    HelloWorld,
+    Nav,
+    NavMenu,
+    Main
   },
+  methods: {
+    onNavMenuActive(menu) {
+      this.isMenuActive = menu;
+    }
+  },
+  data() {
+    return {
+      isMenuActive: ''
+    };
+  }
 };
 </script>
+
+<style lang="scss" scoped>
+.home {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+</style>

@@ -1,0 +1,26 @@
+html,
+body {
+  background: white;
+}
+
+.inner {
+  width: 100%;
+}
+
+@media (min-width: 481px) {
+  .inner {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) {
+  .inner {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .inner {
+    width: 68%;
+  }
+}
