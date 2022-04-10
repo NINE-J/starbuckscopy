@@ -5,7 +5,7 @@
         ><img src="@/assets/starbucks_logo.png" alt="STARBUCKS"
       /></a>
       <div class="menu__wrapper">
-        <div class="menu-user">
+        <div class="menu__user">
           <span class="item">Sign In</span>
           <span class="item">My Starbucks</span>
           <span class="item">Customer Service & Ideas</span>
@@ -129,7 +129,7 @@ div.nav {
     flex-flow: column;
     align-items: end;
 
-    .menu-user {
+    .menu__user {
       display: flex;
       align-items: center;
       position: absolute;
@@ -171,6 +171,10 @@ div.nav {
           border: none;
           padding: 0;
           transition: all 0.4s;
+        }
+
+        .button-search {
+          cursor: pointer;
         }
       }
 

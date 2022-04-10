@@ -3,8 +3,12 @@
     <ul class="list__wrapper inner">
       <li class="items__wrapper" v-for="(item, i) in menu[menuProp]" :key="i">
         <dl class="item__list">
-          <dt class="title">{{ item.title }}</dt>
-          <dd class="item" v-for="(item__inner, i) in item.items" :key="i">
+          <dt class="item__title">{{ item.title }}</dt>
+          <dd
+            class="item__content"
+            v-for="(item__inner, i) in item.items"
+            :key="i"
+          >
             {{ item__inner }}
           </dd>
         </dl>
@@ -233,11 +237,11 @@ export default {
       width: 220px;
 
       .item__list {
-        .title {
+        .item__title {
           padding: 3px 0 12px;
         }
 
-        .item {
+        .item__content {
           padding: 5px 0;
           font-size: 0.75rem;
           color: #999;
