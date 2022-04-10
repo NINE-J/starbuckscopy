@@ -31,7 +31,7 @@
             </div>
           </div>
         </div>
-        <div class="menu">
+        <div class="menu__contents">
           <span
             class="item"
             :class="{ active: menuProp == 'coffee' }"
@@ -190,7 +190,7 @@ div.nav {
       }
     }
 
-    .menu {
+    .menu__contents {
       display: flex;
       align-items: center;
       position: absolute;
@@ -203,6 +203,7 @@ div.nav {
         padding: 0.6rem 1.4rem 1.6rem;
         color: #666;
         font-weight: 900;
+        cursor: pointer;
       }
 
       .item.active {
