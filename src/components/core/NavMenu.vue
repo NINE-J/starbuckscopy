@@ -1,5 +1,9 @@
 <template>
-  <div class="nav__menu" v-if="menuProp" @mouseleave="onNavMenuActive('')">
+  <div
+    class="nav__menu"
+    :class="{ active: menuProp !== '' && !mouseDirty }"
+    @mouseleave="onNavMenuActive('')"
+  >
     <ul class="list__wrapper inner">
       <li class="items__wrapper" v-for="(item, i) in menu[menuProp]" :key="i">
         <dl class="item__list">
@@ -224,12 +228,16 @@ export default {
 <style lang="scss" scoped>
 .nav__menu {
   width: 100%;
+  max-height: 0;
   display: flex;
   justify-content: center;
   background: #2c2a29;
+  transition: 0.6s all;
+  overflow: hidden;
 
   .list__wrapper {
     display: flex;
+    flex-wrap: wrap;
     color: #fff;
     padding: 2rem;
 
@@ -249,5 +257,9 @@ export default {
       }
     }
   }
+}
+
+.nav__menu.active {
+  max-height: 999px;
 }
 </style>
