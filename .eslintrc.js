@@ -1,10 +1,10 @@
-module.exports = {
-  rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto'
-      }
-    ]
-  }
-};
+// module.exports = {
+//   rules: {
+//     'prettier/prettier': [
+//       'error',
+//       {
+//         endOfLine: 'auto'
+//       }
+//     ]
+//   }
+// };

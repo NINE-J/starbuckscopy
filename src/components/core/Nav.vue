@@ -1,9 +1,9 @@
 <template>
   <div class="nav">
     <div class="inner">
-      <a href="/" class="logo"
-        ><img src="@/assets/starbucks_logo.png" alt="STARBUCKS"
-      /></a>
+      <a href="/" class="logo">
+        <img src="@/assets/starbucks_logo.png" alt="STARBUCKS" />
+      </a>
       <div class="menu__wrapper">
         <div class="menu__user">
           <span class="item">Sign In</span>
@@ -25,9 +25,9 @@
               type="text"
             />
             <div class="button-search" @click="onSearch">
-              <md-icon :style="{ color: isSearchActive ? '#669900' : '#aaa' }"
-                >search</md-icon
-              >
+              <md-icon :style="{ color: isSearchActive ? '#669900' : '#aaa' }">
+                search
+              </md-icon>
             </div>
           </div>
         </div>
@@ -36,38 +36,44 @@
             class="item"
             :class="{ active: menuProp == 'coffee' }"
             @mouseover="onNavMenuActive('coffee')"
-            >COFFEE</span
           >
+            COFFEE
+          </span>
           <span
             class="item"
             :class="{ active: menuProp == 'menu' }"
             @mouseover="onNavMenuActive('menu')"
-            >MENU</span
           >
+            MENU
+          </span>
           <span
             class="item"
             :class="{ active: menuProp == 'store' }"
             @mouseover="onNavMenuActive('store')"
-            >STORE</span
           >
+            STORE
+          </span>
           <span
             class="item"
             :class="{ active: menuProp == 'responsibility' }"
             @mouseover="onNavMenuActive('responsibility')"
-            >RESPONSIBILITY</span
           >
+            RESPONSIBILITY
+          </span>
           <span
             class="item"
             :class="{ active: menuProp == 'rewards' }"
             @mouseover="onNavMenuActive('rewards')"
-            >MY STARTBUCKS REWARDS</span
           >
+            MY STARTBUCKS REWARDS
+          </span>
           <span
             class="item"
             :class="{ active: menuProp == 'new' }"
             @mouseover="onNavMenuActive('new')"
-            >WHAT'S NEW</span
           >
+            WHAT'S NEW
+          </span>
         </div>
       </div>
     </div>
