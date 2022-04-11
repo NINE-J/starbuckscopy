@@ -1,11 +1,16 @@
 <template>
   <div
     class="nav__menu"
-    :class="{ active: menuProp !== '' && !mouseDirty }"
-    @mouseleave="onNavMenuActive('')"
+    :class="{ active: isMenuDirty }"
+    @mouseenter="isMenuActive(true)"
+    @mouseleave="isMenuActive(false)"
   >
     <ul class="list__wrapper inner">
-      <li class="items__wrapper" v-for="(item, i) in menu[menuProp]" :key="i">
+      <li
+        class="items__wrapper"
+        v-for="(item, i) in menu[navDataProp]"
+        :key="i"
+      >
         <dl class="item__list">
           <dt class="item__title">{{ item.title }}</dt>
           <dd
@@ -25,14 +30,18 @@
 export default {
   name: 'NavMenu',
   props: {
-    menuProp: {
+    navDataProp: {
       type: String,
       default: undefined
+    },
+    isMenuDirty: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
-    onNavMenuActive(menu) {
-      this.$emit('onNavMenuActive', menu);
+    isMenuActive(state) {
+      this.$emit('isMenuActive', state);
     }
   },
   data() {

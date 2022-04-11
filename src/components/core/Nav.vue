@@ -34,43 +34,49 @@
         <div class="menu__contents">
           <span
             class="item"
-            :class="{ active: menuProp == 'coffee' }"
-            @mouseover="onNavMenuActive('coffee')"
+            :class="{ active: navDataProp == 'coffee' && isMenuDirty }"
+            @mouseenter="updateNavData('coffee'), isMenuActive(true)"
+            @mouseleave="isMenuActive(false)"
           >
             COFFEE
           </span>
           <span
             class="item"
-            :class="{ active: menuProp == 'menu' }"
-            @mouseover="onNavMenuActive('menu')"
+            :class="{ active: navDataProp == 'menu' && isMenuDirty }"
+            @mouseenter="updateNavData('menu'), isMenuActive(true)"
+            @mouseleave="isMenuActive(false)"
           >
             MENU
           </span>
           <span
             class="item"
-            :class="{ active: menuProp == 'store' }"
-            @mouseover="onNavMenuActive('store')"
+            :class="{ active: navDataProp == 'store' && isMenuDirty }"
+            @mouseenter="updateNavData('store'), isMenuActive(true)"
+            @mouseleave="isMenuActive(false)"
           >
             STORE
           </span>
           <span
             class="item"
-            :class="{ active: menuProp == 'responsibility' }"
-            @mouseover="onNavMenuActive('responsibility')"
+            :class="{ active: navDataProp == 'responsibility' && isMenuDirty }"
+            @mouseenter="updateNavData('responsibility'), isMenuActive(true)"
+            @mouseleave="isMenuActive(false)"
           >
             RESPONSIBILITY
           </span>
           <span
             class="item"
-            :class="{ active: menuProp == 'rewards' }"
-            @mouseover="onNavMenuActive('rewards')"
+            :class="{ active: navDataProp == 'rewards' && isMenuDirty }"
+            @mouseenter="updateNavData('rewards'), isMenuActive(true)"
+            @mouseleave="isMenuActive(false)"
           >
             MY STARTBUCKS REWARDS
           </span>
           <span
             class="item"
-            :class="{ active: menuProp == 'new' }"
-            @mouseover="onNavMenuActive('new')"
+            :class="{ active: navDataProp == 'new' && isMenuDirty }"
+            @mouseenter="updateNavData('new'), isMenuActive(true)"
+            @mouseleave="isMenuActive(false)"
           >
             WHAT'S NEW
           </span>
@@ -84,9 +90,13 @@
 export default {
   name: 'Nav',
   props: {
-    menuProp: {
+    navDataProp: {
       type: String,
       default: undefined
+    },
+    isMenuDirty: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
@@ -94,9 +104,11 @@ export default {
       if (this.searchText) this.searchText = '';
       this.isSearchActive = !this.isSearchActive;
     },
-    onNavMenuActive(menu) {
-      this.isMenuHover = true;
-      this.$emit('onNavMenuActive', menu);
+    updateNavData(menu) {
+      this.$emit('updateNavData', menu);
+    },
+    isMenuActive(state) {
+      this.$emit('isMenuActive', state);
     }
   },
   data() {
@@ -204,6 +216,7 @@ div.nav {
         color: #666;
         font-weight: 900;
         cursor: pointer;
+        transition: 0.6s all;
       }
 
       .item.active {

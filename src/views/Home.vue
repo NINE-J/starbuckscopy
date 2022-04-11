@@ -1,9 +1,15 @@
 <template>
   <div class="home">
-    <Nav :menuProp="isMenuActive" @onNavMenuActive="onNavMenuActive"></Nav>
+    <Nav
+      :navDataProp="navData"
+      :isMenuDirty="isMenuDirty"
+      @updateNavData="updateNavData"
+      @isMenuActive="isMenuActive"
+    ></Nav>
     <NavMenu
-      :menuProp="isMenuActive"
-      @onNavMenuActive="onNavMenuActive"
+      :navDataProp="navData"
+      @isMenuActive="isMenuActive"
+      :isMenuDirty="isMenuDirty"
     ></NavMenu>
     <Main></Main>
   </div>
@@ -22,13 +28,17 @@ export default {
     Main
   },
   methods: {
-    onNavMenuActive(menu) {
-      this.isMenuActive = menu;
+    updateNavData(menu) {
+      this.navData = menu;
+    },
+    isMenuActive(state) {
+      this.isMenuDirty = state;
     }
   },
   data() {
     return {
-      isMenuActive: ''
+      navData: '',
+      isMenuDirty: false
     };
   }
 };
