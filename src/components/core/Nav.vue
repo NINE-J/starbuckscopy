@@ -216,7 +216,6 @@ div.nav {
         color: #666;
         font-weight: 900;
         cursor: pointer;
-        transition: 0.6s all;
       }
 
       .item.active {
