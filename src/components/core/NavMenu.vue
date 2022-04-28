@@ -317,6 +317,8 @@ export default {
 
 <style lang="scss" scoped>
 .nav__menu {
+  position: fixed;
+  top: 128px;
   width: 100%;
   max-height: 0;
   display: flex;
