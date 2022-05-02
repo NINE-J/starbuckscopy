@@ -122,10 +122,13 @@ export default {
 
 <style lang="scss" scoped>
 div.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
   width: 100%;
   height: 128px;
   display: flex;
-  position: relative;
   justify-content: center;
   background: #f6f5f0;
 

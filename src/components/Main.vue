@@ -12,6 +12,7 @@
     <FindStore></FindStore>
     <Awards></Awards>
     <Footer></Footer>
+    <Badges></Badges>
   </div>
 </template>
 
@@ -28,6 +29,7 @@ import ReserveStore from '@/components/ReserveStore.vue';
 import FindStore from '@/components/FindStore.vue';
 import Awards from '@/components/Awards.vue';
 import Footer from '@/components/core/Footer.vue';
+import Badges from '@/components/Badges.vue';
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -44,13 +46,15 @@ export default {
     ReserveStore,
     FindStore,
     Awards,
-    Footer
+    Footer,
+    Badges
   }
 };
 </script>
 
 <style lang="scss" scoped>
 .main {
+  position: relative;
   width: 100%;
 }
 </style>

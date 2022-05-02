@@ -319,6 +319,8 @@ export default {
 .nav__menu {
   position: fixed;
   top: 128px;
+  left: 0;
+  z-index: 99;
   width: 100%;
   max-height: 0;
   display: flex;

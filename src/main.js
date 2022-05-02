@@ -3,14 +3,16 @@ import App from './App.vue';
 import './registerServiceWorker';
 import router from './router';
 import store from './store';
+import gsap from 'gsap';
 import './main.css';
 
-//Vue Material
+// Vue Material
 import { MdIcon } from 'vue-material/dist/components';
 import 'vue-material/dist/vue-material.min.css';
 import 'vue-material/dist/theme/default.css';
 
 Vue.use(MdIcon);
+Vue.prototype.$gsap = gsap;
 
 Vue.config.productionTip = false;
 
