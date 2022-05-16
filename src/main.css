@@ -51,23 +51,39 @@ body {
 }
 
 .inner {
-  width: 100%;
+  position: relative;
+  width: 54%;
 }
 
-@media (min-width: 481px) {
+.btn {
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: block;
+  transition: 0.4s;
+}
+
+@media (max-width: 1920px) {
   .inner {
-    width: 100%;
+    width: 72%;
   }
 }
 
-@media (min-width: 769px) {
+@media (max-width: 1440px) {
   .inner {
-    width: 80%;
+    width: 92%;
   }
 }
 
-@media (min-width: 1280px) {
-  .inner {
-    width: 68%;
-  }
+@media (max-width: 768px) {
+}
+
+@media (max-width: 640px) {
 }

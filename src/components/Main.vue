@@ -56,5 +56,6 @@ export default {
 .main {
   position: relative;
   width: 100%;
+  margin-top: 128px;
 }
 </style>
