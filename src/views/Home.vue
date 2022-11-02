@@ -6,11 +6,7 @@
       @updateNavData="updateNavData"
       @isMenuActive="isMenuActive"
     ></Nav>
-    <NavMenu
-      :navDataProp="navData"
-      @isMenuActive="isMenuActive"
-      :isMenuDirty="isMenuDirty"
-    ></NavMenu>
+    <NavMenu :navDataProp="navData" @isMenuActive="isMenuActive" :isMenuDirty="isMenuDirty"></NavMenu>
     <Main></Main>
   </div>
 </template>
@@ -18,14 +14,14 @@
 <script>
 import Nav from '@/components/core/Nav.vue';
 import NavMenu from '@/components/core/NavMenu.vue';
-import Main from '@/components/Main.vue';
+import Main from '@/views/Main.vue';
 
 export default {
   name: 'Home',
   components: {
     Nav,
     NavMenu,
-    Main
+    Main,
   },
   methods: {
     updateNavData(menu) {
@@ -33,14 +29,14 @@ export default {
     },
     isMenuActive(state) {
       this.isMenuDirty = state;
-    }
+    },
   },
   data() {
     return {
       navData: '',
-      isMenuDirty: false
+      isMenuDirty: false,
     };
-  }
+  },
 };
 </script>
 

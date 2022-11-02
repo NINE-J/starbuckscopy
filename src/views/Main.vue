@@ -1,8 +1,8 @@
 <template>
   <div class="main">
     <MainVisual></MainVisual>
-    <LineNotice></LineNotice>
-    <Promotion></Promotion>
+    <LineNotice :isShowPromotion="isShowPromotion" @togglePromotion="togglePromotion"></LineNotice>
+    <Promotion :isShowPromotion="isShowPromotion"></Promotion>
     <NewRewards></NewRewards>
     <YouTube></YouTube>
     <MainBean></MainBean>
@@ -47,8 +47,18 @@ export default {
     FindStore,
     Awards,
     Footer,
-    Badges
-  }
+    Badges,
+  },
+  methods: {
+    togglePromotion() {
+      this.isShowPromotion = !this.isShowPromotion;
+    },
+  },
+  data() {
+    return {
+      isShowPromotion: false,
+    };
+  },
 };
 </script>
 
