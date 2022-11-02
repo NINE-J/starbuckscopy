@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/starbuckscopy/precache-manifest.a54f019abfeb0c2ae9c0a46b9613b8d9.js"
+  "/starbuckscopy/precache-manifest.16a451750a06b42ffcd51207241b3a91.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "starbuckscopy"});
