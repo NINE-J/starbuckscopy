@@ -59,35 +59,6 @@ export default {
   img {
     display: block;
   }
-  .back-to-position {
-    opacity: 0;
-    transition: 1s;
-    &.to-right {
-      transform: translateX(-150px);
-    }
-    &.to-left {
-      transform: translateX(150px);
-    }
-  }
-  &.show {
-    .back-to-position {
-      opacity: 1;
-      transform: translateX(0);
-
-      &.delay-0 {
-        transition-delay: 0s;
-      }
-      &.delay-1 {
-        transition-delay: 0.3s;
-      }
-      &.delay-2 {
-        transition-delay: 0.6s;
-      }
-      &.delay-3 {
-        transition-delay: 0.9s;
-      }
-    }
-  }
 
   .inner {
     margin: 0 auto;
