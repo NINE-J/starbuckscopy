@@ -56,7 +56,7 @@ export default {
   },
   data() {
     return {
-      isShowPromotion: false,
+      isShowPromotion: true,
     };
   },
 };
