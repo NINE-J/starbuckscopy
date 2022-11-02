@@ -15,6 +15,9 @@ Vue.use(MdIcon);
 Vue.prototype.$gsap = gsap;
 // swiper
 import 'swiper/dist/css/swiper.css';
+// VueScrollmagic
+import VueScrollmagic from 'vue-scrollmagic';
+Vue.use(VueScrollmagic);
 
 Vue.config.productionTip = false;
 
